@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
-def inicial(request):
-    return HttpResponse('Testando - Aguarde...')
+def index(request):
+    dicionario_contexto = {'msgnegrito': "Testando fonte em negrito..."}
+    return render(request, 'home/index.html', dicionario_contexto)

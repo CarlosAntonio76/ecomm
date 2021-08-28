@@ -1,50 +1,37 @@
-﻿<html lang="pt">
+﻿<!DOCTYPE html>
+{% load static %}
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecommerce - CAJB - 2021</title>
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-  <style>
-    body{
-      font-family: 'Titillium Web', sans-serif;
-      color: #666666;
-      text-align: center;
-    }
-    .box{
-      background-color: #fff;
-      width: 500px;
-      margin: 50px auto;
-    }
-    #title {
-      font-size: 30px;
-      margin-top: 25px;
-    }
-    #descricao{
-      font-size:20px;
-      margin: 20px auto;
-    }
-    #logo {
-      margin-top: 25px;
-      max-width: 365px;
-      height: auto;
-    }
-    #logo-task {
-      width: 75px;
-    }
-  </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stilo.css' %}">
+
 </head>
 <body>
-  <div class="box">
-    <img src="logo.png" id="logo">
-    <div id="title">
-      SITE EM MANUTENÇÃO
-    </div>
-    <div id="descricao">
-      (31) 99981-9003<br>
-      carlosantoniodapaixao@gmail.com
-    </div>
-    <a href="http://google.com.br" target="_blank">
-      <img src="c:\ecom\templates\home\LogoJMCP.jpg" id="logo-task">
-    </a>
-  </div>
+  <input type="checkbox" id="bt_menu" />
+  <label for="bt_menu">&#9776;</label>
+<nav class="menu">
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Serviços</a>
+              <ul>
+                  <li><a href="#">Criação de Sites</a></li>
+                  <li><a href="#">Arte Visual</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Conteudo</a>
+              <ul>
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">XML</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Contato</a></li>
+
+          <li><a href="#">|| Sair</a></li>
+      </ul>
+
+  </nav>
 </body>
 </html>
