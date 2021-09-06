@@ -8,7 +8,7 @@
  .menu {
  width: 100%;
  height: 50px;
- background-color: #222;
+ background-color: #222; /* Era 222 cor */
  font-family: Arial;
  }
 
@@ -52,7 +52,7 @@
  }
 
 .menu ul ul li a {
- background-color: #069;
+ background-color: #333  /* #069; cor submenu baixo setas*/
  }
 
 /*Criando o label */

@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# Novo
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -24,3 +26,9 @@ urlpatterns = [
 ]
 
 
+"""
+    path('', views.post_list, name='post_list'),
+    path('sobre-nos/', views.about, name='about'),
+    path('contato/', views.contact, name='contact'),
+]
+"""
