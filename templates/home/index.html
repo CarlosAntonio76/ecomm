@@ -22,14 +22,14 @@
           </li>
           <li><a href="#">Conteudo</a>
               <ul>
-                  <li><a href="#">HTML</a></li>
-                  <li><a href="#">CSS</a></li>
+                  <li><a href="{% url 'sobre' %}">Sobre</a></li>
+                  <li><a href="{% url 'bases' %}">Bases</a></li>
                   <li><a href="#">XML</a></li>
               </ul>
           </li>
           <li><a href="#">Contato</a></li>
 
-          <li><a href="#">|| Sair</a></li>
+          <li><a href="{% url 'fechar' %}">|| Sair</a></li>
       </ul>
 
   </nav>
