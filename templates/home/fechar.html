@@ -1,3 +1,4 @@
+<!--
 <script>
 function close_window() {
   if (confirm("Close Window?")) {
@@ -7,9 +8,60 @@ function close_window() {
 
 </script>
 
+-->
+
+<!DOCTYPE html>
+{% load static %}
+
 <html>
 <head>
-    <title>E-commerce - Fechando...</title>
-    <h2>Fechado com sucesso!!</h2>
+    <title>E-Commerce....Fechou</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/stilo.css' %}">
+<style>
+    body{
+      font-family: 'Titillium Web', sans-serif;
+      color: #666666;
+      text-align: center;
+    }
+    .box{
+      background-color: #fff;
+      width: 500px;
+      margin: 50px auto;
+    }
+    #title {
+      font-size: 30px;
+      margin-top: 25px;
+    }
+    #descricao{
+      font-size:20px;
+      margin: 20px auto;
+    }
+    #logo {
+      margin-top: 25px;
+      max-width: 365px;
+      height: auto;
+    }
+    #logo-task {
+      width: 85px; #era 75
+    }
+  </style>
 </head>
+<body>
+
+  <div class="box">
+  <img src="{% static 'imgs/LogoJMCP.jpg' %}" id="logo">
+    <div id="title">
+      Obrigado por visitar o E-commerce - CAJB 2021<br>
+      Carlos Antonio da Paixão<br>
+    </div>
+    <div id="descricao">
+      (31) 99981-9003<br>
+      carlosantoniodapaixao@gmail.com
+    </div>
+    <a href="http://google.com.br" target="_blank">
+
+      <img src="{% static 'imgs/LogoJMCP.jpg' %}" id="logo-task">
+    </a>
+  </div>
+</body>
 </html>

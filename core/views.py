@@ -5,7 +5,6 @@ def index(request):
     dicionario_contexto = {'msgnegrito': "Testando fonte em negrito..."}
     return render(request, 'home/index.html', dicionario_contexto)
 
-
 def sobre(request):
     textoe = {'msgneg': "testando..."}
     return render(request, 'home/index2.html', textoe)
