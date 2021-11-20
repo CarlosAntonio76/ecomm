@@ -1,0 +1,2 @@
+https://about-wendrew.medium.com/realizando-buscas-em-registros-com-django-936dfe1215bb
+

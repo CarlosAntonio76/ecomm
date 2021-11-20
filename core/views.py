@@ -1,5 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
+
+
+from django.views.generic import CreateView, ListView
+#from core.models import Funcionario
+from .models import Funcionario
 
 def index(request):
     dicionario_contexto = {'msgnegrito': "Testando fonte em negrito..."}
@@ -18,3 +24,17 @@ def bases(request):
 def fechar(request):
     textoc = {'msgex': "testess..."}
     return render(request, 'home/fechar.html', textoc)
+
+
+def inicial(request):
+    Listar = Funcionario.objetos.all()
+    return render(request, 'home/inicial.html', {'Listar': Listar})
+
+
+
+def listarn(request):
+    messages.info(request, 'Seja bem vindo(a)!')
+
+    Listar = Funcionario.objetos.all()
+    return render(request, 'home/listarn.html', {'Listar': Listar})
+

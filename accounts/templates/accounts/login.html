@@ -1,0 +1,44 @@
+﻿{% extends "home/base.html" %}
+{% load static %}
+
+{% block conteudo %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/stilo_login.css' %}">
+
+{% if not user.is_authenticated %}
+ <form method="POST" action="{% url 'login' %}">
+  {% include 'parciais/_messagens.html' %}
+  {% csrf_token %}
+<div id="login">
+  <form class="card">
+      <div class="card-header">
+          <h2>Login</h2>
+      </div>
+      <div class="card-content">
+          <div class="card-content-area">
+              <label for="usuario">Usuário</label>
+              <input type="text" name="usuario" value="{{request.POST.usuario}}" autocomplete="off">
+          </div>
+          <div class="card-content-area">
+              <label for="password">Senha</label>
+              <input type="password" name="senha" autocomplete="off">
+          </div>
+      </div>
+
+      <div class="card-footer">
+          <input type="submit" value="Entrar" class="submit">
+          <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
+      </div>
+  </form>
+{% else %}
+    <p>
+        <br>
+        Você está logado como: {{user}},
+        <a href="{% url 'logout' %}">clique aqui</a> para sair.
+    </p>
+{% endif %}
+
+</div>
+</form>
+
+{% endblock %}

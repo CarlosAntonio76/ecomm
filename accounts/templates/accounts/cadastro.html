@@ -1,0 +1,48 @@
+﻿{% extends 'home/base.html' %}
+
+{% block titulo %}Cadastro | {% endblock %}
+
+{% load static %}
+
+{% block conteudo %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/formcadastro.css' %}">
+
+
+<form method="POST" action="{% url 'cadastro' %}">
+    <h2>Cadastro de Usuários</h2>
+
+  {% include 'parciais/_messagens.html' %}
+  {% csrf_token %}
+    <div class="card-content-area">
+        <label>Nome</label>
+        <input type="text" name="nome" value="{{request.POST.nome}}" autocomplete="off">
+    </div>
+    <div>
+        <label>Sobrenome</label>
+        <input type="text" name="sobrenome" value="{{request.POST.sobrenome}}" autocomplete="'off">
+    </div>
+    <div class="card-content-area">
+        <label>E-mail</label>
+        <input type="text" name="email" value="{{request.POST.email}}" autocomplete="'off">
+    </div>
+    <div>
+          <label>Usuário</label>
+          <input type="text" name="usuario" value="{{request.POST.usuario}}" autocomplete="off">
+    </div>
+    <div>
+         <label>Senha</label>
+         <input type="password" name="senha" autocomplete="off">
+    </div>
+    <div>
+        <label>Senha2</label>
+         <input type="password" name="senha2" autocomplete="off">
+    </div>
+
+    <div id="botao">
+      <input type="submit" name="botao" value="Salvar" class="botaoEnviar" />
+   </div>
+
+</form>
+
+{% endblock %}
