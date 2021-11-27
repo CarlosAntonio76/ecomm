@@ -7,7 +7,71 @@
 <h1 class="mt-3 mb-3">Olá {{ user.first_name }} {{ user.last_name }}</h1>
 {% include 'parciais/_messagens.html' %}
 <p>
- Nome do usuário é: {{user}}.
+ Nome do usuário: {{user}}.
 </p>
+
+<div class="container">
+    <form action="{%url 'dashboard'%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table table-hover table-sm">
+            <tr>
+                <th>Codigo Funcionario   : {{ form.codfunc }} </th>
+            </tr>
+
+            <tr>
+                <th>Nome do Funcionario  : {{ form.nome }} </th>
+
+            </tr>
+
+            <tr>
+                <th>Sobrenome Funcionario: {{ form.sobrenome }}</th>
+            </tr>
+
+            <tr>
+                <th>Endereço             : {{ form.endereco }}</th>
+            </tr>
+
+            <tr>
+                <th>Número               : {{ form.numero }}</th>
+            </tr>
+
+            <tr>
+                <th>Bairro               : {{ form.bairro }}</th>
+            </tr>
+
+            <tr>
+                <th>cidade               : {{ form.cidade }}</th>
+            </tr>
+
+            <tr>
+                <th>Estado               : {{ form.estado }}</th>
+            </tr>
+
+            <tr>
+                <th>CPF Funcionario      : {{ form.cpf }}</th>
+            </tr>
+
+
+            <tr>
+                <th>Telefone             : {{ form.telefone }}</th>
+            </tr>
+
+            <tr>
+                <th>Tempo trabalho       : {{ form.tempo_de_servico }}</th>
+            </tr>
+
+            <tr>
+                <th>Renda                : {{ form.remuneracao }}</th>
+            </tr>
+
+         <tr>
+             <td colspan="2">
+                 <button type="submit" class="btn btn-primary">Salvar</button>
+             </td>
+         </tr>
+        </table>
+    </form>
+</div>
+
 
 {% endblock %}

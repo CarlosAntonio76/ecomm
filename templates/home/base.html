@@ -40,8 +40,15 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'inicial' %}">Página Inicial</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'listarn' %}">Funcionários</a>
+                    </li>
+
+                    <li class="nav-item">
+                          <!-- Sair em negrito <a class="nav-link" href="{% url 'logout' %}" style="color: #F00"><b>|Sair</b></a> -->
+                          <a class="nav-link" href="{% url 'logout' %}" style="color: #F00">|Sair</a>
+
                     </li>
                 </ul>
 
@@ -51,8 +58,8 @@
                          <a class="nav-link" href="#"><b>Usuário:</b> | {{user}}</a>
                     </li>
                       {% endif %}
-                </ul>
 
+                </ul>
 
                 <ul class="navbar-nav float-right">
                     <li class="nav-item">

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 
 
 from django.views.generic import CreateView, ListView
@@ -31,7 +33,7 @@ def inicial(request):
     return render(request, 'home/inicial.html', {'Listar': Listar})
 
 
-
+@login_required(redirect_field_name='login')
 def listarn(request):
     messages.info(request, 'Seja bem vindo(a)!')
 

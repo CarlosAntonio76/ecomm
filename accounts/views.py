@@ -4,6 +4,7 @@ from django.contrib import messages, auth
 from django.core.validators import validate_email
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from accounts.models import FormFuncionario
 
 
 def login(request):
@@ -78,4 +79,31 @@ def cadastro(request):
 
 @login_required(redirect_field_name='login')
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+    if request.method != 'POST':
+        form = FormFuncionario()
+        return render(request, 'accounts/dashboard.html', {'form': form})
+
+    form = FormFuncionario(request.POST, request.FILES)
+
+    if not form.is_valid():
+        messages.error(request, 'Erro ao enviar o formulario.')
+        form = FormFuncionario(request.POST)
+        return render(request, 'accounts/dashboard.html', {'form': form})
+
+    nome = request.POST.get('nome')
+    endereco = request.POST.get('endereco')
+
+    if len(nome) < 5:
+        messages.error(request, 'Nome deve ter 5 caracteres ou mais.')
+        form = FormFuncionario(request.POST)
+        return render(request, 'accounts/dashboard.html', {'form': form})
+
+    if len(endereco) < 5:
+        messages.error(request, 'Endereço deve ter 5 caracteres ou mais.')
+        form = FormFuncionario(request.POST)
+        return render(request, 'accounts/dashboard.html', {'form': form})
+
+
+    form.save()
+    messages.success(request, f'Funcionario {request.POST.get("nome")} salvo com sucesso!')
+    return redirect('dashboard')
