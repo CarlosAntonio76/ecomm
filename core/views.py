@@ -27,7 +27,6 @@ def fechar(request):
     textoc = {'msgex': "testess..."}
     return render(request, 'home/fechar.html', textoc)
 
-
 def inicial(request):
     Listar = Funcionario.objetos.all()
     return render(request, 'home/inicial.html', {'Listar': Listar})
