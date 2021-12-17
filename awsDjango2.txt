@@ -1,0 +1,3 @@
+https://ajipratama.medium.com/deploy-django-using-uwsgi-nginx-in-aws-lightsail-with-ubuntu-20-14-lts-1ea601fb8bed
+
+https://medium.com/analytics-vidhya/deploying-django-apps-e2f4d4f355a1

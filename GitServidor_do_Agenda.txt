@@ -1,0 +1,26 @@
+Acesso servidor Agenda.
+No putty = carlosantonio@35.199.69.40
+
+mkdir repositorio
+cd repositorio
+git init --bare
+cd ..
+
+cd agend ( agenda )
+git init
+git remote add origin /home/carlosantonio/repositorio/
+git add .
+git commit -am "Inicial" se der erro aqui, execute comandos a baixo.
+
+git init
+git config user.name "carlosantonio"
+git config user.email "carlosantoniodapaixao@gmail.com"
+
+
+git add .
+git commit -am "Inicial"
+git push orign master ( toda vez que fizer alteracao no servidor agenda )
+
+
+
+
